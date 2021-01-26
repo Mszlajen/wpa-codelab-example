@@ -44,3 +44,12 @@ self.addEventListener('notificationclick', function(event) {
     clients.openWindow('https://developers.google.com/web/')
     );
 });
+
+pushButton.addEventListener('click', function() {
+    pushButton.disabled = true;
+    if (isSubscribed) {
+      unsubscribeUser();
+    } else {
+      subscribeUser();
+    }
+  });
